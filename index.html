@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CONECTA TUS DERECHOS</title>
+<style>
+:root{--azul:#37c9ff;--morado:#9b72ff;--fondo:#080b20;--panel:#111936;--texto:#eef4ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 15% 10%,#20205a 0,transparent 35%),radial-gradient(circle at 85% 30%,#102e55 0,transparent 32%),var(--fondo);color:var(--texto);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+header{min-height:95vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;position:relative;overflow:hidden}
+.hero{position:relative;z-index:2;max-width:1100px}
+h1{font-size:clamp(2.6rem,8vw,6.4rem);margin:0 0 14px;letter-spacing:3px;line-height:1.05;color:#fff;text-shadow:0 0 12px var(--azul),0 0 32px var(--morado)}
+.subtitulo{font-size:clamp(1rem,2.5vw,1.35rem);color:#d7e7ff;max-width:760px;margin:0 auto 28px;line-height:1.6}
+.portada{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px auto;max-width:900px}
+.portada img{width:100%;height:185px;object-fit:cover;border-radius:20px;border:2px solid #6ddcff;box-shadow:0 0 22px #287dff66;transition:.35s}
+.portada img:hover{transform:scale(1.07);filter:saturate(1.25)}
+.school{color:#7bdcff;font-weight:bold;line-height:1.7;margin-top:22px}
+nav{position:sticky;top:0;z-index:20;background:#080b20eF;backdrop-filter:blur(12px);border-block:1px solid #3a70b5;padding:10px;display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+nav a{color:#eaf7ff;text-decoration:none;font-size:.9rem;padding:9px 13px;border:1px solid #4775bb;border-radius:30px;transition:.25s}
+nav a:hover{background:#287dff;color:white;box-shadow:0 0 15px #37c9ff}
+main{max-width:1150px;margin:auto;padding:25px 18px 70px}
+section{margin:55px 0;scroll-margin-top:85px}
+.section-title{text-align:center;font-size:clamp(1.8rem,4vw,2.7rem);color:#83dcff;text-shadow:0 0 14px #347cff;margin-bottom:12px}
+.intro{text-align:center;color:#c9d9f5;max-width:850px;margin:0 auto 25px;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:20px}
+.card{background:linear-gradient(145deg,#17234aee,#10152fee);border:1px solid #4975c4;border-radius:22px;padding:23px;box-shadow:0 10px 30px #0005;transition:.3s;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:#4b8cff16;right:-40px;top:-45px}
+.card:hover{transform:translateY(-7px);box-shadow:0 0 25px #388bff55;border-color:#7fe4ff}
+.card h3{color:#9fe7ff;margin-top:0;font-size:1.25rem}
+.card p,.card li{line-height:1.65;color:#e0e9ff}
+.card ul{padding-left:20px}
+.icon{font-size:2rem;margin-bottom:10px;display:block}
+.banner{padding:28px;border-radius:25px;background:linear-gradient(110deg,#163b76,#4d2b87);border:1px solid #7adfff;text-align:center;box-shadow:0 0 25px #287dff55}
+.banner p{line-height:1.7}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px}
+.gallery figure{margin:0;overflow:hidden;border-radius:18px;border:1px solid #609ce9;background:#111936}
+.gallery img{display:block;width:100%;height:190px;object-fit:cover;transition:transform .4s}
+.gallery img:hover{transform:scale(1.12)}
+.gallery figcaption{padding:12px;text-align:center;color:#ccecff}
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px}
+.video{padding:20px;border-radius:18px;background:#151e40;border:1px solid #536fc0}
+.video a{display:inline-block;margin-top:10px;color:#8ce5ff;font-weight:bold;text-decoration:none}
+.video a:hover{text-decoration:underline}
+footer{text-align:center;padding:35px 15px;background:#070a19;border-top:1px solid #345b9d;color:#b8c9e9}
+.floaties{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.float{position:absolute;bottom:-70px;font-size:25px;opacity:.55;animation:subir linear infinite;filter:drop-shadow(0 0 7px #54cfff)}
+@keyframes subir{0%{transform:translateY(0) rotate(0deg);opacity:0}10%{opacity:.65}90%{opacity:.5}100%{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+.btn{display:inline-block;background:linear-gradient(90deg,#168bff,#925cff);color:white;text-decoration:none;font-weight:bold;padding:13px 23px;border-radius:30px;box-shadow:0 0 18px #4c91ff77}
+.btn:hover{filter:brightness(1.2);transform:scale(1.04)}
+@media(max-width:650px){.portada{grid-template-columns:1fr}.portada img{height:160px}nav{position:relative}header{min-height:auto;padding-top:75px}.card{padding:19px}}
+</style>
+</head>
+<body>
+<div class="floaties" aria-hidden="true" id="floaties"></div>
+<header id="inicio">
+  <div class="hero">
+    <h1>CONECTA TUS DERECHOS</h1>
+    <p class="subtitulo">Conoce, protege y ejerce tus derechos en el mundo digital. Internet también es un espacio donde mereces respeto, seguridad y libertad.</p>
+    <div class="portada">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900" alt="Persona usando una computadora">
+      <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900" alt="Tecnología y seguridad digital">
+      <img src="https://images.unsplash.com/photo-151632149手?auto=format&fit=crop&w=900" alt="Conexión digital" onerror="this.src='https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900'">
+    </div>
+    <div class="school">
+      Escuela Secundaria Técnica Industrial y Comercial No. 0011 “CALMECAC”
+      <br>
+      Integrantes:
+      <ul style="list-style:none;padding:0;margin:8px 0 0;line-height:1.8;color:#d7e7ff">
+        <li>Ángel Emiliano Celis Sarabia</li>
+        <li>Diego García Ocampo</li>
+        <li>Mateo Emiliano Maldonado Esquivel</li>
+        <li>Emilio Karel Rosales García</li>
+      </ul>
+    </div>
+    <p style="margin-top:26px"><a class="btn" href="#temas">EXPLORAR MIS DERECHOS ↓</a></p>
+  </div>
+</header>
+<nav>
+<a href="#temas">Derechos digitales</a><a href="#identidad">Identidad digital</a><a href="#obligaciones">Obligaciones</a><a href="#acceso">Acceso e información</a><a href="#neutralidad">Neutralidad</a><a href="#galeria">Galería</a><a href="#videos">Videos</a>
+</nav>
+<main>
+<section id="temas">
+<h2 class="section-title">🌐 ¿Qué son los derechos digitales?</h2>
+<p class="intro">Son los derechos que tenemos cuando usamos internet, redes sociales, videojuegos, aplicaciones y otros medios tecnológicos. Buscan que podamos participar en el mundo digital de forma libre, segura, responsable y respetuosa.</p>
+<div class="cards">
+<article class="card"><span class="icon">🔐</span><h3>Derecho a la privacidad</h3><p>Tienes derecho a mantener protegidos tus datos personales, fotografías, conversaciones y demás información privada. Nadie debería compartirlos sin tu permiso, y puedes decidir qué información quieres hacer pública.</p></article>
+<article class="card"><span class="icon">🗣️</span><h3>Derecho a la libertad de expresión</h3><p>Puedes expresar tus ideas, opiniones y pensamientos en internet sin ser discriminado por ello. Este derecho también implica escuchar a los demás y expresarte con respeto, sin amenazas ni ataques.</p></article>
+<article class="card"><span class="icon">🧹</span><h3>Derecho al olvido</h3><p>En ciertos casos, puedes solicitar que se eliminen o desindexen datos personales que ya no sean necesarios o que afecten tu privacidad. No significa borrar cualquier información de internet automáticamente: depende de las circunstancias y de las leyes aplicables.</p></article>
+<article class="card"><span class="icon">🛡️</span><h3>Seguridad digital</h3><p>Tienes derecho a usar servicios digitales con medidas que ayuden a proteger tus cuentas, dispositivos e información. También es importante que sepas cómo reportar contenido peligroso o actividades sospechosas.</p></article>
+<article class="card"><span class="icon">🤝</span><h3>Respeto e igualdad</h3><p>Todas las personas deben recibir un trato digno en línea, sin discriminación, acoso ni exclusión. El respeto también significa no compartir mensajes ofensivos y apoyar a quien esté siendo tratado injustamente.</p></article>
+<article class="card"><span class="icon">📚</span><h3>Educación digital</h3><p>Tenemos derecho a aprender a utilizar la tecnología y a desarrollar habilidades para identificar riesgos y aprovechar sus beneficios. Esto incluye reconocer noticias falsas, cuidar nuestras cuentas y usar internet para estudiar.</p></article>
+</div>
+</section>
+<section id="identidad">
+<h2 class="section-title">🪪 Identidad digital</h2>
+<p class="intro">La identidad digital es la información que nos representa en internet: nuestros perfiles, publicaciones, comentarios, fotografías, nombres de usuario y actividades en línea.</p>
+<div class="cards">
+<article class="card"><h3>Cuida tu huella digital</h3><p>Lo que publicas puede permanecer en internet durante mucho tiempo. Antes de compartir, piensa si te sentirías cómodo con que otras personas lo vieran.</p></article>
+<article class="card"><h3>Protege tus cuentas</h3><p>Usa contraseñas seguras y diferentes, activa la verificación en dos pasos cuando esté disponible y no compartas tus claves.</p></article>
+<article class="card"><h3>Evita la suplantación</h3><p>No te hagas pasar por otra persona. Si alguien utiliza tu nombre o fotografías sin permiso, guarda evidencia y pide ayuda a un adulto de confianza.</p></article>
+</div>
+</section>
+<section id="obligaciones">
+<h2 class="section-title">⚖️ Obligaciones de la identidad digital</h2>
+<p class="intro">Además de derechos, tenemos responsabilidades para que internet sea un espacio seguro para todos.</p>
+<div class="cards">
+<article class="card"><h3>Ser respetuoso</h3><p>Tratar a los demás con educación, no insultar, amenazar ni participar en el ciberacoso.</p></article>
+<article class="card"><h3>Respetar la privacidad</h3><p>No publicar fotos, conversaciones, datos o información de otras personas sin su permiso.</p></article>
+<article class="card"><h3>Compartir información confiable</h3><p>Comprobar la fuente antes de difundir noticias, imágenes o mensajes. No ayudar a propagar rumores.</p></article>
+<article class="card"><h3>Respetar la creación ajena</h3><p>Dar crédito a autores y respetar los derechos de autor al utilizar imágenes, textos, música o videos.</p></article>
+</div>
+</section>
+<section id="acceso">
+<h2 class="section-title">🌍 Derecho al acceso y a la información</h2>
+<p class="intro">Las personas deben tener oportunidades de acceder a internet y buscar, recibir y compartir información. El acceso digital ayuda a estudiar, comunicarse y participar en la sociedad.</p>
+<div class="cards">
+<article class="card"><span class="icon">📶</span><h3>Acceso a internet</h3><p>Promover que más personas puedan conectarse, sin importar dónde vivan o su situación económica.</p></article>
+<article class="card"><span class="icon">🔎</span><h3>Buscar información</h3><p>Consultar distintas fuentes, comparar datos y aprender a reconocer información falsa o engañosa.</p></article>
+<article class="card"><span class="icon">♿</span><h3>Accesibilidad</h3><p>Los contenidos y servicios digitales deben procurar ser utilizables por personas con distintas capacidades y necesidades.</p></article>
+</div>
+</section>
+<section id="neutralidad">
+<h2 class="section-title">⚖️ Derecho a la neutralidad de internet</h2>
+<p class="intro">La neutralidad de la red es el principio de que el tráfico de internet debe tratarse de manera equitativa, sin bloquear, ralentizar o favorecer injustificadamente ciertos contenidos, aplicaciones o servicios.</p>
+<div class="banner">
+<h3>¿Por qué es importante?</h3>
+<p>Ayuda a que las personas puedan explorar sitios, usar aplicaciones y acceder a información sin que su proveedor de internet favorezca injustamente unas opciones sobre otras. Existen reglas y excepciones que pueden variar según las leyes de cada país.</p>
+</div>
+</section>
+<section id="galeria">
+<h2 class="section-title">✨ Galería digital</h2>
+<p class="intro">La tecnología conecta personas, ideas y oportunidades. ¡Úsala con responsabilidad!</p>
+<div class="gallery">
+<figure><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900" alt="Estudiante utilizando tecnología"><figcaption>Aprender y descubrir</figcaption></figure>
+<figure><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900" alt="Ciberseguridad"><figcaption>Proteger nuestra información</figcaption></figure>
+<figure><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900" alt="Personas trabajando en equipo"><figcaption>Conectar y colaborar</figcaption></figure>
+<figure><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900" alt="Estudiantes trabajando juntos"><figcaption>Compartir conocimiento</figcaption></figure>
+</div>
+</section>
+<section id="videos">
+<h2 class="section-title">▶️ Videos relacionados</h2>
+<p class="intro">Selecciona un tema para abrir una búsqueda de videos en YouTube y aprender más.</p>
+<div class="videos">
+<div class="video"><h3>🔐 Privacidad en internet</h3><p>Aprende cómo cuidar tus datos personales y tus cuentas.</p><a href="https://www.youtube.com/results?search_query=privacidad+digital+para+estudiantes" target="_blank" rel="noopener">Ver videos en YouTube ↗</a></div>
+<div class="video"><h3>🛡️ Seguridad digital</h3><p>Consejos para navegar de forma segura y reconocer riesgos.</p><a href="https://www.youtube.com/results?search_query=seguridad+digital+para+ni%C3%B1os+y+adolescentes" target="_blank" rel="noopener">Ver videos en YouTube ↗</a></div>
+<div class="video"><h3>🪪 Identidad digital</h3><p>Conoce tu huella digital y cómo cuidar tu reputación en línea.</p><a href="https://www.youtube.com/results?search_query=identidad+digital+explicacion" target="_blank" rel="noopener">Ver videos en YouTube ↗</a></div>
+<div class="video"><h3>🌐 Neutralidad de internet</h3><p>Descubre qué significa que la red sea neutral.</p><a href="https://www.youtube.com/results?search_query=neutralidad+de+la+red+explicacion" target="_blank" rel="noopener">Ver videos en YouTube ↗</a></div>
+<div class="video"><h3>🤝 Ciberacoso y respeto</h3><p>Cómo convivir y actuar con respeto en espacios digitales.</p><a href="https://www.youtube.com/results?search_query=ciberacoso+prevencion+adolescentes" target="_blank" rel="noopener">Ver videos en YouTube ↗</a></div>
+<div class="video"><h3>📚 Derechos digitales</h3><p>Una introducción a los derechos que tenemos en internet.</p><a href="https://www.youtube.com/results?search_query=derechos+digitales+explicacion" target="_blank" rel="noopener">Ver videos en YouTube ↗</a></div>
+</div>
+</section>
+<section>
+<div class="banner"><h2>💙 ¡Tus derechos también cuentan en internet!</h2><p>Infórmate, respeta a los demás, protege tus datos y utiliza la tecnología para aprender y crear un mundo digital mejor.</p><a class="btn" href="#inicio">VOLVER AL INICIO ↑</a></div>
+</section>
+</main>
+<footer>Proyecto escolar · CONECTA TUS DERECHOS · Escuela Secundaria Técnica Industrial y Comercial No. 0011 “CALMECAC”</footer>
+<script>
+const cont=document.getElementById('floaties');
+const figuras=['⚖️','🔐','💻','🌐','🛡️','📱','💬','🔎','✨','📡','🔑','💙','📚','🧩','⚡','🪪','🤝','🖥️'];
+for(let i=0;i<38;i++){
+ const el=document.createElement('span');el.className='float';el.textContent=figuras[Math.floor(Math.random()*figuras.length)];
+ el.style.left=Math.random()*100+'%';el.style.animationDuration=(12+Math.random()*20)+'s';el.style.animationDelay=(-Math.random()*25)+'s';el.style.fontSize=(17+Math.random()*23)+'px';cont.appendChild(el);
+}
+</script>
+</body>
+</html>
